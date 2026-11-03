@@ -30,7 +30,7 @@ The code lives in the private GitHub repository `vinima/TeardownBot`. Vercel wat
 1. Make the change, including its docs, and run `yarn verify`. For anything visible, check it in the running app.
 2. Tell the owner in plain language what changed and that it passed. Commit and push only when they say so ("deploy it", or "make this change and deploy it").
 3. Commit, then `git push origin main`.
-4. Confirm the result from GitHub, where Vercel reports back: `gh api repos/vinima/TeardownBot/deployments` lists deployments, and each one's `statuses_url` gives its state and site address. Tell the owner whether it succeeded. If it failed, explain why, and fix it if they want. They'd rather hear this than be asked to read logs.
+4. Confirm the result from GitHub, where Vercel reports back: `gh api repos/vinima/TeardownBot/commits/<commit>/status` shows a `Vercel` entry that reads `pending`, then `success` or `failure`, usually within a few minutes. (GitHub's `deployments` list stays empty for this project, so don't rely on it.) Tell the owner whether it succeeded. If it failed, explain why, and fix it if they want. They'd rather hear this than be asked to read logs.
 
 Changing a Vercel setting (Settings → Environment Variables) doesn't take effect until the owner redeploys from Vercel's **Deployments** page. Keys are entered by the owner in Vercel, never through the chat.
 
