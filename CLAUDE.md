@@ -23,6 +23,17 @@ export NVM_DIR="$HOME/.nvm"; . "$NVM_DIR/nvm.sh"; nvm use >/dev/null
    ```
    Then tell the owner to open http://localhost:3000.
 
+## Making and deploying changes
+
+The code lives in the private GitHub repository `vinima/TeardownBot`. Vercel watches its `main` branch, so **pushing to `main` publishes to the live site**. There is no separate deploy command, and no Vercel login is needed.
+
+1. Make the change, including its docs, and run `yarn verify`. For anything visible, check it in the running app.
+2. Tell the owner in plain language what changed and that it passed. Commit and push only when they say so ("deploy it", or "make this change and deploy it").
+3. Commit, then `git push origin main`.
+4. Confirm the result from GitHub, where Vercel reports back: `gh api repos/vinima/TeardownBot/deployments` lists deployments, and each one's `statuses_url` gives its state and site address. Tell the owner whether it succeeded. If it failed, explain why, and fix it if they want. They'd rather hear this than be asked to read logs.
+
+Changing a Vercel setting (Settings → Environment Variables) doesn't take effect until the owner redeploys from Vercel's **Deployments** page. Keys are entered by the owner in Vercel, never through the chat.
+
 ## Conventions
 
 - **yarn 1 only.** `yarn.lock` is the lockfile. Add libraries with `yarn add`. Keep `package-lock.json` out of the project, because two lockfiles confuse Vercel's install. Yarn 1 doesn't install peer dependencies, so when a library warns about an unmet peer, add it explicitly (that's why `zod` is listed). Script names must avoid yarn 1's built-in commands (`check`, `audit`, `info`…), which take over a script with the same name.

@@ -42,6 +42,8 @@ Prefer OpenAI? Use an OpenAI key instead. In Step 3 you'd add `OPENAI_API_KEY` p
    - If you've already run the app on your computer, make a clean zip first with `yarn zip` (it leaves out everything that shouldn't be uploaded). Otherwise **don't upload** `node_modules`, `.next` or `.env.local`. `.env.local` contains your API key. (Finder hides files starting with a dot, so normally they're skipped anyway.)
 5. Click **Commit changes**.
 
+Already using Claude Code with the GitHub command line tool (`gh`)? You can skip the upload and ask Claude to create a private repository and push the project to it. This project's own copy lives at `vinima/TeardownBot`.
+
 ## Step 3: Deploy on Vercel (about 10 minutes)
 
 1. Go to vercel.com and sign up **with your GitHub account**.
@@ -53,6 +55,8 @@ Prefer OpenAI? Use an OpenAI key instead. In Step 3 you'd add `OPENAI_API_KEY` p
 5. Open your new site, enter your password under **Password**, click the **Vercel** preset and ask a question.
 
 Friction-log prompts: How long from sign-up to a live URL? Did anything confuse you? Did Vercel recognize the project as Next.js on its own?
+
+**Making changes later:** once Vercel is connected, every change pushed to the `main` branch on GitHub goes live automatically within a few minutes. You don't need to do anything in Vercel. If a build fails, the previous version normally stays live. The one exception is settings: after changing an environment variable in Vercel, go to **Deployments**, open the latest one and click **Redeploy**.
 
 ## Step 4: Add PostHog (about 15 minutes)
 

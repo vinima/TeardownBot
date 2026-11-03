@@ -81,7 +81,7 @@ Names starting with `NEXT_PUBLIC_` are baked into the page when it's built, so t
 | Use a different Claude model | `.env.local` / Vercel | set `MODEL` (no code change) |
 | Track a new analytics event | `app/page.tsx` | call `track("event_name", { ... })` where it happens |
 
-After any change, run `yarn verify`. It runs the tests and a full build, which catches most mistakes before you deploy.
+After any change, run `yarn verify`. It runs the tests and a full build, which catches most mistakes before you deploy. Pushing to the `main` branch on GitHub is what deploys: Vercel picks the change up automatically.
 
 ## Details worth knowing
 
