@@ -1,0 +1,21 @@
+# Files to leave out when sharing the project. `yarn zip` and GitHub both use
+# this list.
+
+# Your private keys. .env.example is only a template, so it is kept.
+.env*
+!.env.example
+
+# Downloaded libraries and build output. Both are recreated automatically.
+node_modules/
+.next/
+out/
+build/
+next-env.d.ts
+*.tsbuildinfo
+
+# Vercel's link between this folder and your project
+.vercel/
+
+# Logs and files macOS adds on its own
+*.log
+.DS_Store

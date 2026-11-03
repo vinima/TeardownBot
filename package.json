@@ -1,0 +1,32 @@
+{
+  "name": "teardown-bot",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "setup": "bash scripts/setup.sh",
+    "zip": "bash scripts/zip.sh",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "node --experimental-strip-types lib/retrieve.test.ts",
+    "verify": "yarn test && yarn build"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^4.0.90",
+    "@ai-sdk/openai": "^4.0.104",
+    "ai": "^7.0.155",
+    "next": "^16.4.3",
+    "posthog-js": "^1.441.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}
