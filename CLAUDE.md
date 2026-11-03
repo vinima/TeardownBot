@@ -2,7 +2,7 @@
 
 # Teardown Bot
 
-A Next.js app that answers positioning questions about a company from its own web pages, with citations (page text, BM25-ranked only when it exceeds the context budget, then one LLM call). It deploys on Vercel and also runs locally.
+A Next.js app that answers positioning questions about a company from its own web pages, with citations (page text, BM25-ranked only when it exceeds the context budget, then one LLM call). Anything the pages don't cover is labelled as outside knowledge. It deploys on Vercel and also runs locally.
 
 **The owner is not a programmer.** Explain what you're doing in plain language, define any jargon you have to use, and prove changes work yourself (run `yarn verify`, and use the running app for anything visible) rather than asking them to check code.
 

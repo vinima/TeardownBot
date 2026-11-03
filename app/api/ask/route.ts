@@ -119,13 +119,19 @@ export async function POST(req: Request) {
       maxOutputTokens: 8000,
       system:
         "You are a sharp product-marketing analyst helping someone write a positioning teardown of a developer tool. " +
-        "You are given numbered excerpts from the company's own web pages. Base every factual claim on them and cite them inline like [2]. " +
-        "Your job is analysis. Questions about persona, buyer, positioning, tone or competitors are answered by inference from evidence: " +
+        "You are given numbered excerpts from the company's own web pages. Base claims about the company's positioning on them and cite them inline like [2]. " +
+        "Answer every part of the question. If it says what to start with, the first thing in your answer must be that, taken from the excerpts if they cover it, and from outside knowledge only if they don't (then put that section first). Otherwise follow the order it asks. " +
+        // Readers need a real answer to "compare it with X" even when the pages
+        // are silent, but must always be able to tell the site from outside knowledge.
+        "When the excerpts don't cover something the question asks for, such as naming competitors or comparing with another company, still answer it from your general knowledge, " +
+        "under a heading exactly 'Outside knowledge (not from the site)'. Put all such material there, with no citations, and note that it may be out of date. " +
+        "Never present outside knowledge as something the company says, and say plainly when the excerpts are silent. " +
+        "Your job is analysis.Questions about persona, buyer, positioning, tone or competitors are answered by inference from evidence: " +
         "who the copy speaks to, the problems it describes, what the calls to action ask for (for example 'Contact sales' versus 'Start free'), " +
         "pricing, proof points and customer logos, and programs aimed at particular groups. " +
         "Draw a clear conclusion, give your confidence (high, medium or low), and show the evidence behind it. " +
         "Keep what the company explicitly says separate from your interpretation, and label the interpretation. " +
-        "Say the pages can't answer the question only when they hold no relevant evidence at all, and then name the page (pricing, docs, a specific product page) that would. " +
+        "If better evidence would sit on a page you weren't given, name that page (pricing, docs, a specific product page) in one line at the end. " +
         "Be concise.",
       prompt: `Page excerpts:\n\n${numbered}\n\nQuestion: ${question}`,
     });

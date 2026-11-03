@@ -2,7 +2,7 @@
 
 Teardown Bot is a research assistant for **positioning teardowns**, meaning write-ups of how a company describes its product, who it's aimed at, and how it handles pricing and competitors.
 
-You give it a few of a company's web pages and ask a question. It reads those pages and answers **only from what they say**, with numbered citations so you can check each claim.
+You give it a few of a company's web pages and ask a question. It reads those pages and answers from what they say, with numbered citations so you can check each claim. If you ask for something the pages don't cover, such as a comparison with another company, it answers that part from the AI's general knowledge, in a section headed **Outside knowledge (not from the site)**. That section has no citations and may be out of date, so check it before relying on it.
 
 ## Who it's for
 
@@ -38,7 +38,7 @@ The bot reasons from evidence on the pages: who the copy speaks to, the problems
 | Some pages "showed a bot check" | The site's bot protection (often Cloudflare) sends a "checking your browser" page instead of the real one | Nothing in the app can get past this today. Try a different page on the same site |
 | Some pages have "almost no readable text" | Usually an app or login screen with no text even for search engines | Use the company's marketing pages instead |
 | Long inputs are trimmed | The bot reads every page in full up to about 12,000 words in total, which covers most sets of 3–8 marketing pages. Beyond that it picks the passages that best match your question's words | For big inputs (long docs pages), use fewer pages, or phrase questions with words the site would use (for example "pricing", "free tier", "enterprise") |
-| It says "the excerpts don't say" | That's deliberate. It won't make things up | Add the page that would have the answer |
+| It says the excerpts are silent, or uses "Outside knowledge" | The pages you listed don't cover that part of your question. The bot only reads the pages you list, so it won't find a company's comparison pages by itself | Add the page that would have the answer. For competitors, look for the company's comparison or migration guides (Vercel's are at addresses like `vercel.com/kb/guide/vercel-vs-netlify`) |
 | At most 8 pages per question | Keeps it fast and cheap | Ask several narrower questions |
 | No memory between questions | Each question is answered fresh | Include any context in the question itself |
 
