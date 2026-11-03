@@ -1,6 +1,6 @@
 // The server side of the app. It receives a question and a list of web
 // pages, fetches those pages, finds the most relevant passages, and asks
-// an AI model to answer using only those passages.
+// an AI model to answer from those passages, labelling anything they don't cover.
 
 import { generateText } from "ai";
 import { anthropic } from "@ai-sdk/anthropic";

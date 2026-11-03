@@ -15,7 +15,7 @@ People researching how developer-tool companies market themselves, for example t
 3. **Password**: only needed if whoever runs the app set one (`APP_PASSWORD`).
 4. Click **Ask**. After 5 to 20 seconds you get:
    - **The answer**, with citations like `[2]`.
-   - **Excerpts cited**: the numbered passages the answer cites, each with a link to its page.
+   - **Excerpts cited**: the numbered passages the answer cites, each with a link to its page. The numbers match the answer, so `[20]` in the answer is number 20 in the list. Gaps are normal, because excerpts the answer didn't use aren't listed.
    - A warning if the answer **was cut short** because it got too long.
    - **Pages only partly read**, if any: pages that build their text with JavaScript. For these the bot could only use the short summary the page includes for search engines and link previews.
    - **Pages that couldn't be read**, if there were any, with the reason.

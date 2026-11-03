@@ -64,7 +64,7 @@ export default function Home() {
       <header>
         <p className="eyebrow">Positioning research</p>
         <h1>Teardown Bot</h1>
-        <p className="lede">Ask how a developer tool positions itself. Answers come only from the pages you list, with citations.</p>
+        <p className="lede">Ask how a developer tool positions itself. Answers come from the pages you list, with citations. Anything else is labelled as outside knowledge.</p>
       </header>
 
       <section className="card">
@@ -111,8 +111,9 @@ export default function Home() {
               {result.ms && <p className="meta">Answered in {(result.ms / 1000).toFixed(1)}s</p>}
               <h2>Excerpts cited</h2>
               <ol className="sources">
+                {/* Only cited excerpts are listed, so keep each one's own number to match the answer's [n]. */}
                 {result.sources?.map((s) => (
-                  <li key={s.n}>
+                  <li key={s.n} value={s.n}>
                     <a href={s.url} target="_blank" rel="noreferrer">{s.url}</a>
                     <span>{s.preview}…</span>
                   </li>
