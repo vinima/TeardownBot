@@ -5,7 +5,17 @@ import { useState } from "react";
 import { track } from "./posthog";
 
 const PRESETS: Record<string, string[]> = {
-  Vercel: ["https://vercel.com", "https://vercel.com/pricing", "https://vercel.com/docs"],
+  // Vercel keeps its head-to-head comparisons in its knowledge base, not on
+  // the homepage, so the competitor guides are included here.
+  Vercel: [
+    "https://vercel.com",
+    "https://vercel.com/pricing",
+    "https://vercel.com/docs",
+    "https://vercel.com/kb/guide/vercel-vs-netlify",
+    "https://vercel.com/kb/guide/vercel-vs-render",
+    "https://vercel.com/kb/guide/vercel-vs-railway",
+    "https://vercel.com/kb/guide/vercel-vs-northflank",
+  ],
   PostHog: ["https://posthog.com", "https://posthog.com/pricing", "https://posthog.com/docs"],
 };
 

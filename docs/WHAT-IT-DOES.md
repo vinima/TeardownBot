@@ -10,7 +10,7 @@ People researching how developer-tool companies market themselves, for example t
 
 ## Using it
 
-1. **Pages to read**: paste up to 8 web addresses, one per line. The **Vercel** and **PostHog** buttons fill in a ready-made set (homepage, pricing, docs).
+1. **Pages to read**: paste up to 8 web addresses, one per line. The **Vercel** and **PostHog** buttons fill in a ready-made set (homepage, pricing, docs). The Vercel set also includes Vercel's four comparison guides (vs Netlify, Render, Railway and Northflank), because that's where Vercel talks about competitors. Clicking a button replaces whatever is in the box, so add any extra pages after clicking it.
 2. **Your question**: type a question, or click one of the suggested ones.
 3. **Password**: only needed if whoever runs the app set one (`APP_PASSWORD`).
 4. Click **Ask**. After 5 to 20 seconds you get:
